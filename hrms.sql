@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS public.verification_code_candidates
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS public.verification_code_employer
+CREATE TABLE IF NOT EXISTS public.verification_code_employers
 (
     id INT NOT NULL,
     employer_id INT NOT NULL,
@@ -132,13 +132,13 @@ ALTER TABLE public.verification_code_candidates
     NOT VALID;
 
 
-ALTER TABLE public.verification_code_employer
+ALTER TABLE public.verification_code_employers
     ADD FOREIGN KEY (employer_id)
     REFERENCES public.employers (id)
     NOT VALID;
 
 
-ALTER TABLE public.verification_code_employer
+ALTER TABLE public.verification_code_employers
     ADD FOREIGN KEY (id)
     REFERENCES public.verification_codes (id)
     NOT VALID;
