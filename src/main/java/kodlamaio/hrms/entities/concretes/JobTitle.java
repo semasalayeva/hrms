@@ -1,4 +1,4 @@
-package kodlamaio.hrms.entities;
+package kodlamaio.hrms.entities.concretes;
 
 import lombok.Data;
 
@@ -9,11 +9,11 @@ import javax.persistence.*;
 @Data
 public class JobTitle {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "title")
+    @Column(name = "title", unique = true)
     private String title;
 
     public JobTitle() {
