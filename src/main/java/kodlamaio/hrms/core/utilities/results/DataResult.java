@@ -1,5 +1,9 @@
 package kodlamaio.hrms.core.utilities.results;
 
+import kodlamaio.hrms.entities.concretes.Candidate;
+
+import java.util.List;
+
 public class DataResult<T> extends Result {
 
     private T data;

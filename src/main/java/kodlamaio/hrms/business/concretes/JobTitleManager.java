@@ -1,6 +1,7 @@
-package kodlamaio.hrms.busniess.concretes;
+package kodlamaio.hrms.business.concretes;
 
-import kodlamaio.hrms.busniess.abstracts.JobTitleService;
+import kodlamaio.hrms.business.abstracts.JobTitleService;
+import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import kodlamaio.hrms.dataAcces.JobTitleDao;
@@ -19,8 +20,8 @@ public class JobTitleManager implements JobTitleService {
     }
 
     @Override
-    public List<JobTitle> getAll() {
-        return jobTitleDao.findAll();
+    public DataResult<List<JobTitle>> getAll() {
+        return new SuccessDataResult<>(jobTitleDao.findAll());
     }
 
     @Override
